@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Route, Routes } from 'react-router'
 import Home from '../Components/Home'
 import Products from '../Components/Products'
@@ -8,11 +8,12 @@ import Gallery from '../Components/Gallery'
 import Login from '../Components/Login'
 import Details from '../Components/Details'
 
-const Roters = () => {
+const Roters = ({input}) => {
+
   return (
     <div>
           <Routes>
-             <Route path='/' element={<Home></Home>}> </Route>
+             <Route path='/' element={<Home input={input}></Home>}> </Route>
              <Route path='/products' element={<Products></Products>}> </Route>
              <Route path='/addproducts' element={<Addproducts></Addproducts>}></Route>
              <Route path='/about' element={<About></About>}></Route>

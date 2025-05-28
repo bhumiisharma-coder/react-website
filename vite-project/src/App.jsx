@@ -9,11 +9,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [count, setCount] = useState(0)
+    const [input,setinput] = useState("");
 
   return (
     <>
-      <Navbar></Navbar>
-     <Roters></Roters>
+      
+      <Navbar input={input} setinput={setinput}></Navbar>
+     <Roters input={input}></Roters>
         
     </>
   )

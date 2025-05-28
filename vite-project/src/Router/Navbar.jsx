@@ -3,7 +3,14 @@ import {Link, NavLink} from "react-router"
 import "../App.css"
 import { FaSearch } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = ({input,setinput}) => {
+
+     const handleSearch = (e) => {
+    const value = e.target.value;
+    setinput(value) // Update state in parent
+  }
+
+
   return (
     <div className='d-flex justify-content-around pt-3 align-items-center bg-dark text-white'>
          <h1>logo</h1>
@@ -45,7 +52,7 @@ const Navbar = () => {
              )}> gallery</NavLink>
 
         <div className='position-relative'>
-        <input placeholder='search herer ' className='inputs'/> 
+        <input placeholder='search herer ' className='inputs'  value={input} onChange={(e)=>handleSearch(e)}/> 
         <FaSearch  className='position-absolute left-0'/>
         </div>
                
